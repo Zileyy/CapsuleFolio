@@ -1,0 +1,10 @@
+{
+
+"dependencies":{
+    "0":"gspread",
+    "1":"gspread_dataframe",
+    "2":"numpy",
+    "3":"pandas"
+     }
+    
+}
