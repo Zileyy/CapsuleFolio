@@ -22,8 +22,9 @@ def install():
         for dependency in dependencies:
             print('Installing : ' + dependencies[dependency])
             os.system(pip_install+str(dependencies[dependency]))
-    except:
-        raise('[!] Error occured make sure you are running python 3 and have python and pip in your PATH')
+    except OSError:
+        print('[!] Error occured make sure you are running python 3 and have python and pip in your PATH')
+        raise
 
 #Function that stores needed user info in json file (sn - sheet_name)
 def storeUserInfo():
@@ -65,6 +66,6 @@ while True:
         elif inp == '2': storeUserInfo()
         elif inp == '3': install()
         elif inp == '4': exit()
-    except:
-        raise('[!] Invalid input... ')
-        os.system('pause')
+    except ValueError:
+        print('[!] Invalid input... ')
+        raise

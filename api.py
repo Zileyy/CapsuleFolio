@@ -19,15 +19,12 @@ df_sheet = pd.DataFrame(ws.get_all_records())                  #Put contents of 
 
 #FUNCTIONS
 #Function that returns next log number
-def getNextLogNumber():
-    df_sheet = pd.DataFrame(ws.get_all_records())
-    #Return only if value of the field contains actual number (not empty)
-    if df_sheet.iloc[-1,0] != None or df_sheet.iloc[-1,0] != "":
-        #Gets last row of first column which is 'Log number' and add +1 as it should be next log number
-        return (df_sheet.iloc[-1,0]) + 1
-    #Return int 1 if no other logs found
-    else:
-        return 1
+def getNextLogNumber(): 
+    df_sheet = pd.DataFrame(ws.get_all_records()) 
+    #Checks if sheet has no previous logs and returns 1 for first log
+    if len(df_sheet) == 0: return 1
+    #If it's not first log get the the last log number from counting rows and add +1
+    else: return int(len(df_sheet)+1)
 
 #Function that pushes new row to Google Spreadsheet from pandas dataframe
 def push(payload):
