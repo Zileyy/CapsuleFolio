@@ -1,4 +1,8 @@
-# CapsuleFolio
+
+<h2>CapsuleFolio</h2>
+<img src="https://img.shields.io/pypi/status/gspread" align='left'>
+<img src="https://img.shields.io/pypi/pyversions/django?label=Python" align='left'>
+<br>
 
 CapsuleFolio is simple passion project made for manually tracking data for RMR2020 sticker capusle investments.
 
